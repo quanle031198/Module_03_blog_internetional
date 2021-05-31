@@ -18,7 +18,7 @@ Route::group(['middleware' => 'locale'],function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
-});
+
 
 // Hiển thị danh sách bài viết
 Route::get('/posts', [PostController::class, 'index'])->name('posts.list');
@@ -31,3 +31,4 @@ Route::post('/posts/create', [PostController::class, 'store'])->name('posts.stor
 
 // Chuyển đổi ngôn ngữ cho website
 Route::get('change-language/{language}', [LanguageController::class, 'changeLanguage'])->name('user.change-language');
+});
